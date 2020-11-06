@@ -1,0 +1,12 @@
+export const Home = "/";
+export const Allcategories = "/categories";
+export const Category = "/category/:category";
+export const Audience = "/audience/:audience";
+export const AllProducts = "/products/all";
+export const Product = "/Product/:id";
+export const Error = "/Error/:id";
+export const AdminLogin = "/admin/login";
+export const AdminRegister = "/admin/register";
+export const AdminAddProduct = "/admin/product/add";
+export const AdminEditProduct = "/admin/product/edit/:id";
+export const AdminDeleteProduct = "/admin/product/delete/:id";
