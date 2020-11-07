@@ -1,0 +1,20 @@
+* {
+    transition: all 0.3s;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Dosis', -apple-system, 'Segoe UI', Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+h1 {
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+a {
+    color: var(--blackwhite-800);
+    
+    &:hover {
+        text-decoration: none;
+    }
+}

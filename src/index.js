@@ -16,10 +16,8 @@ const httpLink = new HttpLink({
   // create the authentication header
   const authLink = new ApolloLink((operation, forward) => {
 
-    const token = window.localStorage.getItem('token');
- 
     // get the authentication token from local storage if it exists
-    // const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI1ZjhjMjEyNjYzM2E1NzExODBjMjA0ZjciLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJpYXQiOjE2MDMwNTA0NDEsImV4cCI6MTYwMzA1NDA0MX0.d8HQs7nZ2iutgvuxJmQChKIkLh9ri3fQj40OI0xFYjE";
+    const token = window.localStorage.getItem('token');
 
     // Use the setContext method to set the HTTP headers.
     operation.setContext({
@@ -35,7 +33,7 @@ const httpLink = new HttpLink({
   // init apolloclient
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
-    // uri: 'http://localhost:4000',
+    uri: 'http://localhost:4000',
     cache: new InMemoryCache(),
   });
 

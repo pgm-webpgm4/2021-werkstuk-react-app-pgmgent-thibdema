@@ -1,0 +1,22 @@
+.color {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid var(--whiteblack-300);
+    border-radius: 0.5rem;
+    margin-right: 0.5rem;
+    font-size: 1rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    span {
+        opacity: 0;
+    }
+    &:hover {
+        cursor: pointer;
+        opacity: 0.8;
+        span {
+            opacity: 1;
+        }
+    }
+}

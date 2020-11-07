@@ -1,12 +1,23 @@
-export const Home = "/";
+// Navs
+export const Home = "/home";
 export const Allcategories = "/categories";
 export const Category = "/category/:category";
 export const Audience = "/audience/:audience";
 export const AllProducts = "/products/all";
-export const Product = "/Product/:id";
-export const Error = "/Error/:id";
-export const AdminLogin = "/admin/login";
-export const AdminRegister = "/admin/register";
+export const Product = "/product/:id";
+export const Contact = "/contact";
+export const Basket = "/basket";
+export const Faq = "/faq";
+export const Search = "/search/:search";
+export const Error = "/error/:id";
+
+// Authentication
+export const Login = "/login";
+export const Register = "/register";
+export const Logout = "/logout";
+
+// Admin
+export const AdminPanel = "/admin";
 export const AdminAddProduct = "/admin/product/add";
 export const AdminEditProduct = "/admin/product/edit/:id";
 export const AdminDeleteProduct = "/admin/product/delete/:id";
