@@ -29,7 +29,7 @@ const Login = () => {
       window.localStorage.setItem('admin', data.login.admin);
       setRedirecter(Routes.Home);
     }
-  }, [data]);
+  }, [data, loading, errors]);
 
   return(
     <div className="login container d-flex justify-content-center">

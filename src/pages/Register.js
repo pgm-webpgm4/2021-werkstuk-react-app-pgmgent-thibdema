@@ -19,6 +19,8 @@ const Register = () => {
   const [redirecter, setRedirecter] = useState('');
 
   useEffect(() => {
+    if (loading) return(<p>Loading ...</p>);
+    if (errors) console.log(errors);
     if(data) {
       setRedirecter(Routes.Login);
     }

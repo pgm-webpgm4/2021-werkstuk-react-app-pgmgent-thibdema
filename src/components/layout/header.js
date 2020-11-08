@@ -30,7 +30,7 @@ const Header = () => {
           </nav>
           <Link to={Routes.Home} className="logo col-md-4 col-12">Clothing Store</Link>
           <div className="header__icons text-right col-md-4 col-12">
-            {(JSON.parse(localStorage.getItem('admin')) == true) ?
+            {(JSON.parse(localStorage.getItem('admin')) === true) ?
               <NavLink to={Routes.AdminPanel} activeClassName="selected">Admin</NavLink> 
               :
               <NavLink to={Routes.Basket} activeClassName="selected">Winkelwagen</NavLink>
