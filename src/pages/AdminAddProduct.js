@@ -72,6 +72,8 @@ const AdminAddProduct = () => {
   };
 
   useEffect(() => {
+    if(loading) return(<p>Loading ...</p>);
+    if(!!errors) console.log(errors);
     if(data) console.log(data);
   });
 

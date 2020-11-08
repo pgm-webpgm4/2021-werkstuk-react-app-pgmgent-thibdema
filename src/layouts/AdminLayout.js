@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect } from 'react';
+import React, { Fragment } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { Redirect } from 'react-router-dom';
 
