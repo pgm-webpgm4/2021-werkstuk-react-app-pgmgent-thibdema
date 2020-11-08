@@ -10,7 +10,7 @@ const httpLink = new HttpLink({
   uri:
     process.env.NODE_ENV === 'development'
       ? 'http://localhost:4000'
-      : 'https://2021-werkstuk-react-app-pgmgent-thibdema.netlify.app',
+      : 'https://werkstuk-graphql-api-pgm4-2021.herokuapp.com/',
 });
 
   // create the authentication header
