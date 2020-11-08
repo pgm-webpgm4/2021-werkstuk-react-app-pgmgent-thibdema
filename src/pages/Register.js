@@ -24,7 +24,7 @@ const Register = () => {
     if(data) {
       setRedirecter(Routes.Login);
     }
-  }, [data]);
+  }, [data ,loading, errors]);
 
   return(
     <div className="register container d-flex justify-content-center">
