@@ -1,0 +1,19 @@
+button {
+    &.btn- {
+        &1 {
+            transition: all ease-in-out 0.3s;
+            background-color: var(--whiteblack-800);
+            color: var(--whiteblack-100);
+            border: 2px solid var(--whiteblack-800);
+            padding: 1rem 8rem;
+            font-weight: 700;
+            font-size: 1.25rem;
+            border-radius: 0.25rem;
+            &:hover {
+                background-color: var(--whiteblack-100);
+                color: var(--whiteblack-800);
+                border: 2px solid var(--whiteblack-800);
+            }
+        }
+    }
+}

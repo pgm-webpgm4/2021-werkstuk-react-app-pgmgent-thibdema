@@ -20,6 +20,8 @@
     "global": "^4.4.0",
     "graphql": "^15.4.0",
     "http-errors": "^1.8.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-apollo": "^3.1.5",
     "react-color": "^2.19.3",
@@ -30,6 +32,7 @@
     "redux": "^4.0.5",
     "request": "2.88.2",
     "sass": "^1.29.0",
+    "subscriptions-transport-ws": "^0.9.18",
     "tsutils": "3.17.1",
     "typescript": "^4.0.5",
     "web-vitals": "^0.2.4"

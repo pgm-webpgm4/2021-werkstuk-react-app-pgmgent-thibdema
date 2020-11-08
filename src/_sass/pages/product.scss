@@ -1,0 +1,19 @@
+.product {
+    &__title {
+        display: flex;
+        align-items: center;
+    }
+
+    &__color {
+        border-radius: 100%;
+        border: 1px solid var(--whiteblack-400);
+        padding: 1.5rem;
+        margin-right: 1rem;
+    }
+
+    &__price {
+        margin-top: 2rem;
+        color: var(--primary-800);
+    }
+
+}

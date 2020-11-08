@@ -13,7 +13,7 @@ export const useError = () => {
   };
   const handleError = e => {
     // notify the error
-    console.error(message);
+    console.error(e);
   };
   return [handleGqlError, handleError];
 };

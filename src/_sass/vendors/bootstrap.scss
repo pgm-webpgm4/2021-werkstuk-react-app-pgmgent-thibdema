@@ -6,6 +6,26 @@
     flex-wrap: wrap;
 }
 
+.badge {
+    &.left {
+        margin-right: 1rem;
+    }
+
+    &.right {
+        margin-left: 1rem;   
+    }
+}
+
+.toast {
+    &:hover {
+        cursor: pointer;
+    }
+
+    *:hover {
+        cursor: pointer;
+    }
+}
+
 @media (min-width: 2000px) {
     .container {
         max-width: 1800px;

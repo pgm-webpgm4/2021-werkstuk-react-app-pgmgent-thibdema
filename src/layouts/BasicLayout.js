@@ -1,9 +1,10 @@
 import React, { Fragment } from 'react';
-import { Footer, Header } from '../components';
+import { Footer, Header, NewProduct } from '../components';
 
 const BasicLayout = ({children}) => {
   return(
     <Fragment>
+      <NewProduct />
       <Header />
       <main>
         {children}
