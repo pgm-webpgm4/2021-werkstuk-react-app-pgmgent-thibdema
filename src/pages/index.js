@@ -8,6 +8,7 @@ import Error from './Error';
 import Login from './Login';
 import Register from './Register';
 import Logout from './Logout';
+import ForgotPassword from './ForgotPassword';
 import AdminPanel from './AdminPanel';
 import AdminAddProduct from './AdminAddProduct';
 import AdminEditProduct from './AdminEditProduct';
@@ -27,6 +28,7 @@ export {
   Login,
   Logout,
   Register,
+  ForgotPassword,
   AdminPanel,
   AdminAddProduct,
   AdminEditProduct,

@@ -15,9 +15,7 @@ export class Basket {
   }
 
   AddProduct(product, size) {
-    console.log(window.localStorage.getItem(this.basketStr));
     if(this.basket.find((e) => e.size === size && e.id === product.id)) {
-      console.log('test');
       const newarr = this.basket.map((e) => {
         if(e.size === size && product.id === e.id) {
           const newQuantity = e.quantity + 1;
@@ -33,13 +31,14 @@ export class Basket {
     return `Product '${product.title}' is added to your shopping basket.`;
   }
 
-  EditQuantity(id) {
-
+  EditQuantity(key, quantity) {
+    this.basket[key].quantity = quantity;
+    window.localStorage.setItem(this.basketStr, JSON.stringify(this.basket));
   }
 
-  RemoveProduct(id) {
-    const item = this.basket.find((e) => e.id = id);
-    window.localStorage.setItem(this.basketStr, JSON.stringify(this.basket.filter((e) => e.id !== id)));
+  RemoveProduct(index) {
+    const item = this.basket.find((e, key) => key !== index);
+    window.localStorage.setItem(this.basketStr, JSON.stringify(this.basket.filter((e, key) => key !== index)));
     return `Product '${item.title}' is removed from your shopping basket.`;
   }
 

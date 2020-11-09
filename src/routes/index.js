@@ -15,6 +15,7 @@ export const Error = "/error/:id";
 export const Login = "/login";
 export const Register = "/register";
 export const Logout = "/logout";
+export const ForgotPassword = "/forgotpassword";
 
 // Admin
 export const AdminPanel = "/admin";

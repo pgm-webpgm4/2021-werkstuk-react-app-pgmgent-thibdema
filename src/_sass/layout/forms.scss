@@ -1,15 +1,13 @@
 form {
-    label {
-        font-weight: 500;
-        &:hover {
-            cursor: pointer;
-        }
-    }
-
     .form-group {
         display: flex;
         flex-direction: column;
     }
+}
 
-
+label {
+    font-weight: 500;
+    &:hover {
+        cursor: pointer;
+    }
 }

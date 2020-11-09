@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import { gql, useLazyQuery } from '@apollo/client';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 
 import * as Routes from '../routes';
+import { ContentLoader } from '../components';
 
 const LOGIN = gql`
   query login($email: String, $password: String) {
@@ -20,7 +21,7 @@ const Login = () => {
 
 
   useEffect(() => {
-    if (loading) return(<p>Loading ...</p>);
+    if (loading) return(<ContentLoader />);
     if (errors) console.log(errors);
   
     if(!!data) {
@@ -47,7 +48,10 @@ const Login = () => {
           <label htmlFor="password">Password</label>
           <input placeholder="Password" className="form-control" id="password" type="password" onChange={(e) => setPassword(e.target.value)} required />
         </div>
-        <button className="btn btn-primary" type="submit">Login</button>
+        <div className="d-flex justify-content-between align-items-center">
+          <button className="btn btn-primary" type="submit">Login</button>
+          <Link to={Routes.ForgotPassword}>Forgot password ?</Link>
+        </div>
       </form>
     </div>
   );

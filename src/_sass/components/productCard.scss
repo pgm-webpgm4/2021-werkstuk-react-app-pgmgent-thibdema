@@ -1,3 +1,6 @@
 .productcard {
     margin-bottom: 1rem;
+    &:hover {
+        cursor: pointer;
+    }
 }

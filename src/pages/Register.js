@@ -3,6 +3,7 @@ import { gql, useMutation } from '@apollo/client';
 import { Redirect } from 'react-router-dom';
 
 import * as Routes from '../routes';
+import { ContentLoader } from '../components';
 
 const REGISTER = gql`
   mutation register($email: String!, $password: String!) {
@@ -19,7 +20,7 @@ const Register = () => {
   const [redirecter, setRedirecter] = useState('');
 
   useEffect(() => {
-    if (loading) return(<p>Loading ...</p>);
+    if (loading) return(<ContentLoader />);
     if (errors) console.log(errors);
     if(data) {
       setRedirecter(Routes.Login);

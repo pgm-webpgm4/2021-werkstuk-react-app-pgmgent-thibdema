@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {SelectedItem} from '../components';
 import {gql, useMutation} from '@apollo/client';
 
+import {ContentLoader} from '../components';
+
 const ADD_PRODUCT = gql`
   mutation addProduct($title: String!, $description: String!, $price: Float, $images: [ImageInput], $created_At: Date, $color: [String]!, $sizes: [SizeQuantityInputs]!, $audience: Audience, $type: Producttype) {
   addProduct(
@@ -72,7 +74,7 @@ const AdminAddProduct = () => {
   };
 
   useEffect(() => {
-    if(loading) return(<p>Loading ...</p>);
+    if(loading) return(<ContentLoader />);
     if(!!errors) console.log(errors);
     if(data) console.log(data);
   });

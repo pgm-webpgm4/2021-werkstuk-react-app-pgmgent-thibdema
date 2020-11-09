@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { gql, useQuery } from '@apollo/client';
 import { Redirect } from 'react-router-dom';
 
-import { Footer, Header, NewProduct } from '../components';
+import { Footer, Header, ContentLoader } from '../components';
 
 const CHECK_ADMIN = gql`
   query checkAdmin($id: ID) {
@@ -18,7 +18,7 @@ const AdminLayout = ({children}) => {
     variables: {id: userId}
   });
 
-  if(loading) return(<p>Loading ...</p>);
+  if(loading) return(<ContentLoader />);
   if(!!errors) console.log(errors);
 
   if(data) {
@@ -30,12 +30,15 @@ const AdminLayout = ({children}) => {
 
   return(
     <Fragment>
-      <NewProduct />
-      <Header />
-      <main>
-        {children}
-      </main>
-      <Footer />
+      {!!data && !errors && 
+        <Fragment>
+          <Header />
+          <main>
+            {children}
+          </main>
+          <Footer />
+        </Fragment>
+      }
     </Fragment>
   );
 };

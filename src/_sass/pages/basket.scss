@@ -1,0 +1,37 @@
+.basket {
+    &__item {
+        display: flex;
+        align-items: flex-end;
+        margin-bottom: 1rem;
+        border: 1px solid var(--whiteblack-500);
+        padding: 1rem 0.5rem;
+        border-radius: 0.25rem;
+        &__title {
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+
+        &__colors {
+            display: flex;
+            margin-top: 0.9rem;
+        }
+
+        &__size {
+            margin-top: 0.5rem;
+        }
+
+        input {
+            margin-bottom: 0;
+        }
+
+        .form-group {
+            margin-top: 1rem;
+            margin-bottom: 0rem;
+        }
+
+        button {
+            margin-top: 0.5rem;
+            width: -webkit-fill-available;;
+        }
+    }
+}

@@ -4,22 +4,30 @@ import * as Routes from './routes';
 import * as Pages from './pages';
 import { BasicLayout, AdminLayout } from './layouts';
 import { RouteWithLayout } from './utilities';
+import { NewProduct } from './components';
 
 import './app.scss';
 
 const App = () => {
   return (
     <div className="App">
+                <NewProduct />
+
       <Router basename="/">
         <Switch>
+          {/* Admin */}
           <RouteWithLayout exact path={Routes.AdminDeleteProduct} layout={ AdminLayout } component={ Pages.AdminDeleteProduct }/>
           <RouteWithLayout exact path={Routes.AdminEditProduct} layout={ AdminLayout } component={ Pages.AdminEditProduct }/>
           <RouteWithLayout exact path={Routes.AdminAddProduct} layout={ AdminLayout } component={ Pages.AdminAddProduct }/>
           <RouteWithLayout path={Routes.AdminPanel} layout={ AdminLayout } component={ Pages.AdminPanel }/>
 
+          {/* Authentication */}
           <RouteWithLayout exact path={Routes.Register} layout={ BasicLayout } component={ Pages.Register }/>
           <RouteWithLayout exact path={Routes.Login} layout={ BasicLayout } component={ Pages.Login }/>
           <RouteWithLayout exact path={Routes.Logout} layout={ BasicLayout } component={ Pages.Logout }/>
+          <RouteWithLayout exact path={Routes.ForgotPassword} layout={ BasicLayout } component={ Pages.ForgotPassword }/>
+
+          {/* Basic routes for everybody */}
           <RouteWithLayout exact path={Routes.Audience} layout={ BasicLayout } component={ Pages.Audience }/>
           <RouteWithLayout exact path={Routes.Allcategories} layout={ BasicLayout } component={ Pages.Categories }/>
           <RouteWithLayout exact path={Routes.Category} layout={ BasicLayout } component={ Pages.Category }/>
@@ -32,7 +40,7 @@ const App = () => {
           <RouteWithLayout exact path={Routes.Home} layout={ BasicLayout } component={ Pages.Home }/>
 
           <Redirect exact from="/" to={Routes.Home} />
-          <Redirect from="*" to={Routes.Error} />
+          <Redirect from="*" to="/error/404"/>
         </Switch>
       </Router>
     </div>

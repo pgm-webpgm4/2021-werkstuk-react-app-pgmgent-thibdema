@@ -2,7 +2,7 @@ import React, { Fragment, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { gql, useQuery } from '@apollo/client';
 
-import {BGImage, ErrorAlert, SuccessAlert} from '../components';
+import {BGImage, ContentLoader, ErrorAlert, SuccessAlert} from '../components';
 import {Basket} from '../hooks';
 
 const GET_PRODUCT = gql`
@@ -22,7 +22,7 @@ const Product = () => {
     variables: {id: id}
   });
 
-  if(loading) return(<p>Loading ... </p>);
+  if(loading) return(<ContentLoader />);
   if(!!errors) console.log(errors);
 
   const AddProduct = () => {
@@ -42,9 +42,8 @@ const Product = () => {
         {(!!data.getProduct) ? 
           <Fragment>
             <div className="col-md-6 col-12">
-              {(data.getProduct.images.length > 0) ?
-                <BGImage url={data.getProduct.images[0].url} height="30rem" />
-                : '<p>No image found.</p>'
+              {
+                <BGImage url={(data.getProduct.images.length > 0) ? data.getProduct.images[0].url : ''} height="30rem" />
               }
             </div>
             <div className="col-md-6 col-12" style={{margin: '1rem 0rem'}}>

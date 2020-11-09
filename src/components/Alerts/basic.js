@@ -10,9 +10,12 @@ const BasicAlert = ({type, message}) => {
   }, []);
 
   return(
-    <div className="alertPersonalized">
-      <div className={`alert container alert-${type} animate__animated ${animation}`} role="alert">
+    <div className={`alertPersonalized animate__animated ${animation}`}>
+      <div className={`alert container alert-${type} alert-dismissable`} role="alert">
         {message}
+        <button type="button" className="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
     </div>
   );
