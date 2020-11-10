@@ -4,9 +4,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Published on netlify
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/045730a7-a414-4772-94de-7de20f0b54c7/deploy-status)](https://app.netlify.com/sites/2021-werkstuk-react-app-pgmgent-thibdema/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/045730a7-a414-4772-94de-7de20f0b54c7/deploy-status)](https://2021-werkstuk-react-app-pgmgent-thibdema.netlify.app){:target="_blank" rel="noopener"}
 
-[Open on netlify](https://2021-werkstuk-react-app-pgmgent-thibdema.netlify.app)
+[Open website on netlify](https://2021-werkstuk-react-app-pgmgent-thibdema.netlify.app){:target="_blank" rel="noopener"}
 
 ## Available Scripts
 
