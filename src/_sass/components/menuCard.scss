@@ -1,0 +1,13 @@
+.menucard {
+    margin-bottom: 1rem;
+    &:hover {
+        cursor: pointer;
+    }
+
+    .card {
+        &-title {
+            margin-bottom: 0;
+            font-weight: 500;
+        }
+    }
+}

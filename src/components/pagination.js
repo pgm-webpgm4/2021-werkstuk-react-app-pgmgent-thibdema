@@ -4,7 +4,7 @@ const Pagination = ({itemsperpage, totalitems, page, setPage}) => {
   const maxPage = Math.ceil(totalitems/itemsperpage);
 
   return(
-    <nav className="d-flex justify-content-center" aria-label="...">
+    <nav className="col-12 d-flex justify-content-center" aria-label="...">
       <ul className="pagination">
         {/* First page */}
         <li onClick={() => page > 1 && setPage(1)} className={(`page-item ${(page === 1) && 'disabled'}`)}>

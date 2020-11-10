@@ -29,6 +29,7 @@ const App = () => {
 
           {/* Basic routes for everybody */}
           <RouteWithLayout exact path={Routes.Audience} layout={ BasicLayout } component={ Pages.Audience }/>
+          <RouteWithLayout exact path={Routes.AllAudience} layout={ BasicLayout } component={ Pages.AllAudience }/>
           <RouteWithLayout exact path={Routes.Allcategories} layout={ BasicLayout } component={ Pages.Categories }/>
           <RouteWithLayout exact path={Routes.Category} layout={ BasicLayout } component={ Pages.Category }/>
           <RouteWithLayout exact path={Routes.AllProducts} layout={ BasicLayout } component={ Pages.AllProducts }/>

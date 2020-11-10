@@ -7,7 +7,7 @@ import SearchBar from './searchBar';
 const Header = () => {
   const [mobileNav, setMobileNav] = useState(false);
   return(
-    <header className={`header animate__animated animate__fadeInDown ${!!mobileNav && 'mobile'}`}>
+    <header className={`header animate__animated animate__fadeInDown ${(!!mobileNav && window.innerWidth < 768) && 'mobile'}`}>
       <div className="row1">
         <div className="container row">
           <div className="col-md-4 col-12">
@@ -24,7 +24,7 @@ const Header = () => {
       <div className="row2">
         <div className="container row">
           {(window.innerWidth < 768) && 
-            <button onClick={() => setMobileNav(!mobileNav)} className={`hamburger hamburger--elastic ${!!mobileNav && 'is-active'}`} type="button">
+            <button onClick={() => setMobileNav(!mobileNav)} className={`hamburger hamburger--elastic ${(!!mobileNav && window.innerWidth < 768) && 'is-active'}`} type="button">
               <span className="hamburger-box">
                 <span className="hamburger-inner"></span>
               </span>
@@ -65,17 +65,20 @@ const Header = () => {
             <NavLink to="/category/Shoes" activeClassName="selected">Shoes</NavLink>
             <NavLink to="/category/Hats" activeClassName="selected">Hats</NavLink>
           </nav>
-          <SearchBar setMobileNav={() => setMobileNav(!mobileNav)} />
+          <SearchBar setMobileNav={() => (!!mobileNav && window.innerWidth < 768) && setMobileNav(!mobileNav)} />
         </div>
       </div>
-      <div className={`mobile__nav ${(!!mobileNav) ? 'd-flex' : 'd-none' } container`}>
-        <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Home} activeClassName="selected">Home</NavLink>
-        <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.AllAudience} activeClassName="selected">Audience</NavLink>
-        <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Allcategories} activeClassName="selected">Categories</NavLink>
-        <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Basket} activeClassName="selected">Winkelmand</NavLink>
-        <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Login} activeClassName="selected">Login</NavLink>
-        <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Register} activeClassName="selected">Register</NavLink>
-      </div>
+      {
+        (!!mobileNav && window.innerWidth < 768) && 
+        <div className={`mobile__nav ${(!!mobileNav) ? 'd-flex' : 'd-none' } container`}>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Home} activeClassName="selected">Home</NavLink>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.AllAudience} activeClassName="selected">Audience</NavLink>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Allcategories} activeClassName="selected">Categories</NavLink>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Basket} activeClassName="selected">Winkelmand</NavLink>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Login} activeClassName="selected">Login</NavLink>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Register} activeClassName="selected">Register</NavLink>
+        </div>
+      }
     </header>
   );
 };

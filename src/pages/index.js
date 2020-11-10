@@ -2,6 +2,7 @@ import Home from './Home';
 import Categories from './Categories';
 import Category from './Category';
 import Audience from './Audience';
+import AllAudience from './Audiences';
 import AllProducts from './AllProducts';
 import Product from './Product';
 import Error from './Error';
@@ -36,4 +37,5 @@ export {
   Search,
   Basket,
   Faq,
+  AllAudience,
 };
