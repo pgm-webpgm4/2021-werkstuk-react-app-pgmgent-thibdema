@@ -3,7 +3,6 @@ import { gql, useLazyQuery } from '@apollo/client';
 import { Redirect, Link } from 'react-router-dom';
 
 import * as Routes from '../routes';
-import { ContentLoader } from '../components';
 
 const LOGIN = gql`
   query login($email: String, $password: String) {
@@ -17,20 +16,17 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [redirecter, setRedirecter] = useState('');
-  const [login, {loading, errors, data}] = useLazyQuery(LOGIN);
+  const [login, {loading, data, error}] = useLazyQuery(LOGIN);
 
 
-  useEffect(() => {
-    if (loading) return(<ContentLoader />);
-    if (errors) console.log(errors);
-  
+  useEffect(() => {  
     if(!!data) {
       window.localStorage.setItem('token', data.login.token);
       window.localStorage.setItem('userId', data.login.userId);
       window.localStorage.setItem('admin', data.login.admin);
       setRedirecter(Routes.Home);
     }
-  }, [data, loading, errors]);
+  }, [data, loading, error]);
 
   return(
     <div className="login container d-flex justify-content-center">
@@ -48,6 +44,7 @@ const Login = () => {
           <label htmlFor="password">Password</label>
           <input placeholder="Password" className="form-control" id="password" type="password" onChange={(e) => setPassword(e.target.value)} required />
         </div>
+        {(error) && <p style={{color: 'red'}}>{error.message}</p>}
         <div className="d-flex justify-content-between align-items-center">
           <button className="btn btn-primary" type="submit">Login</button>
           <Link to={Routes.ForgotPassword}>Forgot password ?</Link>

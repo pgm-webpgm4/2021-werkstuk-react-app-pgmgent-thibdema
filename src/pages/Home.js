@@ -28,8 +28,8 @@ const Home = () => {
 
   return(
     <div className="home">
-      <div className="container">
-        <form onSubmit={(e) => e.preventDefault()} className="row">
+      <div className="">
+        <form onSubmit={(e) => e.preventDefault()} className="container row">
           <div className="form-group col-md-4 col-12">
             <label htmlFor="audience">Audience</label>
             <select onChange={(e) => setAudience(e.target.value)} className="custom-select" id="audience">
@@ -58,7 +58,7 @@ const Home = () => {
         {(loading) ? 
           <ContentLoader />
         :
-          <div className="row">
+          <div className="container row">
             {(data && data.getAllProducts.length > 0) ? 
               data.getAllProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-lg-4 col-md-6 col-12"><ProductCard {...e} /></div> )
               :

@@ -50,7 +50,6 @@ const AdminAddProduct = () => {
   const AddImage = async () => {
     if(!!IMGURL && !!IMGALT) {
       let newarr = images;
-      console.log(images);
       await newarr.push({url: IMGURL, alt: IMGALT});
       await setImages(newarr);
       await setIMGURL('');

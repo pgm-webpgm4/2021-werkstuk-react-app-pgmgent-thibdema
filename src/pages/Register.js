@@ -4,6 +4,7 @@ import { Redirect } from 'react-router-dom';
 
 import * as Routes from '../routes';
 import { ContentLoader } from '../components';
+import { useError } from '../hooks';
 
 const REGISTER = gql`
   mutation register($email: String!, $password: String!) {
@@ -14,18 +15,21 @@ const REGISTER = gql`
 `;
 
 const Register = () => {
+  const [handleGqlError] = useError();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [register, { loading, errors, data }] = useMutation(REGISTER);
+  const [register, { loading, error, data }] = useMutation(REGISTER, {
+    onError: handleGqlError
+  });
   const [redirecter, setRedirecter] = useState('');
 
   useEffect(() => {
     if (loading) return(<ContentLoader />);
-    if (errors) console.log(errors);
+    if (error) console.log(error.message);
     if(data) {
       setRedirecter(Routes.Login);
     }
-  }, [data ,loading, errors]);
+  }, [data ,loading, error]);
 
   return(
     <div className="register container d-flex justify-content-center">
@@ -43,6 +47,7 @@ const Register = () => {
           <label htmlFor="password">Password</label>
           <input className="form-control" id="password" type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} required />
         </div>
+        {(error) && <p style={{color: 'red'}}>{error.message}</p>}
         <button className="btn btn-primary" type="submit">Register</button>
       </form>
     </div>
