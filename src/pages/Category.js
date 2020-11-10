@@ -27,7 +27,7 @@ const Category = () => {
     <div className="category">
       <div className="container row">
         {(data && data.getCategoryProducts.length > 0) ? 
-          data.getCategoryProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-md-4 col-12"><ProductCard {...e} /></div> )
+          data.getCategoryProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-lg-4 col-md-6 col-12"><ProductCard {...e} /></div> )
           :
           <p className="col-12">No products yet.</p>
         }

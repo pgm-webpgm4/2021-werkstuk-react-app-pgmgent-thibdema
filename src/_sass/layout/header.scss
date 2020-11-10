@@ -1,4 +1,7 @@
 .header {
+    &.mobile {
+        min-height: 100vh;
+    }
     .row {
         &1 {
             color: var(--whiteblack-800);
@@ -71,5 +74,108 @@
         align-items: center;
         padding-top: 0.5rem;
         padding-bottom: 0.5rem;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    header {
+        .row {
+            &3 {
+                nav {
+                    a {
+                        &:nth-child(n+8) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    header {
+        position: sticky;
+        top: 0;
+        left: 0;
+        background-color: var(--whiteblack-300);
+        z-index: 5000;
+        .row {
+            &1 {
+                display: none;
+            }
+            &2 {
+                padding: 1rem 0rem !important;
+                > div {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .header__icons {
+                    a {
+                        display: none;
+                    }
+                }
+
+                nav {
+                    display: none;
+                }
+
+                .logo {
+                    width: fit-content !important;
+                    font-size: 2rem;
+                }
+            }
+            &3 {
+                .header__searchbar {
+                    padding-left: 0 !important;
+                    padding-right: 0 !important;
+                }
+
+                nav {
+                    a {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .mobile {
+            &__nav {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                font-size: 3rem;
+                font-weight: 800;
+                text-transform: uppercase;
+                .selected {
+                    border: 0;
+                    color: var(--secondary-900) !important;
+
+                }
+            }
+            .row {
+                &3 {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    header {
+        .row {
+            &2 {
+                .container {
+                    .header__searchbar {
+                        padding-left: 1rem !important;
+                        padding-right: 1rem !important;
+                    }
+                }
+            }
+            &3 {
+
+            }
+        }
     }
 }

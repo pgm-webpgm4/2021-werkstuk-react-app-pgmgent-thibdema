@@ -27,7 +27,7 @@ const Audience = () => {
     <div className="audience">
       <div className="container row">
         {(data && data.getAudienceProducts.length > 0) ? 
-          data.getAudienceProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-md-4 col-12"><ProductCard {...e} /></div> )
+          data.getAudienceProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-lg-4 col-md-6 col-12"><ProductCard {...e} /></div> )
           :
           <p className="col-12">No products yet.</p>
         }

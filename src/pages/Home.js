@@ -60,7 +60,7 @@ const Home = () => {
         :
           <div className="row">
             {(data && data.getAllProducts.length > 0) ? 
-              data.getAllProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-md-4 col-12"><ProductCard {...e} /></div> )
+              data.getAllProducts.slice(((page-1)*itemsperpage), (page*itemsperpage)).map((e, key) => <div key={key} className="col-lg-4 col-md-6 col-12"><ProductCard {...e} /></div> )
               :
               <p className="col-12">No products yet.</p>
             }

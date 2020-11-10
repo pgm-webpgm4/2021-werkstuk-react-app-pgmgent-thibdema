@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 
-const SearchBar = () => {
+const SearchBar = ({setMobileNav}) => {
   const [searchValue, setSearchValue] = useState('');
   const [redirecter, setRedirecter] = useState();
 
   return(
     <form onSubmit={(e) => {
       e.preventDefault();
+      setMobileNav();
       setRedirecter(`/search/${searchValue}`);
     }} role="search" className="header__searchbar col-md-4 col-12">
       {(!!redirecter) ? <Redirect to={redirecter} /> : '' }

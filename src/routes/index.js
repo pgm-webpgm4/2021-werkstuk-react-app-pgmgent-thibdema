@@ -2,6 +2,7 @@
 export const Home = "/home";
 export const Allcategories = "/categories";
 export const Category = "/category/:category";
+export const AllAudience = "/audiences/";
 export const Audience = "/audience/:audience";
 export const AllProducts = "/products/all";
 export const Product = "/product/:id";
