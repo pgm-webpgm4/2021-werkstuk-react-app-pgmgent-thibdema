@@ -55,7 +55,7 @@ const Product = () => {
                 {data.getProduct.color.length > 0 && data.getProduct.color.map((e, key) => <div key={key} className="product__color" style={{backgroundColor: `${e}`}}></div>)}
               </div>
               <h1 className="product__price">&euro; {data.getProduct.price.toFixed(2)}</h1>
-              <select onChange={(e) => setSize(e.target.value)} value={size} style={{width: '23.25rem', marginBottom: '1rem'}} className="form-control" required>
+              <select onChange={(e) => setSize(e.target.value)} value={size} style={{marginBottom: '1rem'}} className="form-control product__form__item" required>
                 <option disabled value="">Choose size</option>
                 <option>XS</option>
                 <option>S</option>
@@ -63,7 +63,7 @@ const Product = () => {
                 <option>L</option>
                 <option>XL</option>
               </select>
-              <button className="btn-1" onClick={() => AddProduct()}>Add to basket</button>
+              <button className="btn-1 product__form__item" onClick={() => AddProduct()}>Add to basket</button>
             </div>
           </Fragment>
           :

@@ -6,9 +6,18 @@
         border: 1px solid var(--whiteblack-500);
         padding: 1rem 0.5rem;
         border-radius: 0.25rem;
+
+        .parent__price {
+            padding: 0.5rem;
+            font-size: 1rem;
+            top: 0.5rem;
+            right: 0.5rem;
+        }
+
         &__title {
             margin-right: 1rem;
             font-weight: 600;
+            font-size: 1.25rem;
         }
 
         &__colors {
@@ -32,6 +41,37 @@
         button {
             margin-top: 0.5rem;
             width: -webkit-fill-available;;
+        }
+    }
+
+    &__checkout {
+        label {
+            margin-right: 1rem;
+            font-weight: 600;
+        }
+        &__price {
+            width: fit-content;
+            margin-right: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .basket {
+        &__item {
+            &__colors {
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .basket {
+        &__item {
+            &__title {
+                margin-top: 0.5rem;
+            }
         }
     }
 }

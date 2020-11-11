@@ -9,6 +9,24 @@
         cursor: pointer;
     }
 
+    &__price {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        padding: 0.5rem 1rem;
+        font-weight: 600;
+        border: 2px solid var(--danger);
+        background-color: var(--danger);
+        color: var(--white);
+        border-radius: 0.5rem;
+        font-size: 1.25rem;
+        z-index: 5;
+        &:hover {
+            background-color: var(--white);
+            color: var(--danger)
+        }
+    }
+
     .child {
         transition: all 0.3s;
         border-radius: 0.25rem;

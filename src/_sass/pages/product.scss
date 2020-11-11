@@ -16,4 +16,20 @@
         color: var(--primary-800);
     }
 
+    button {
+        padding: 1rem 0rem;
+    }
+
+    &__form__item {
+        width: 23rem;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .product {   
+        &__form__item {
+            width: 90%;
+        }
+    }
 }
