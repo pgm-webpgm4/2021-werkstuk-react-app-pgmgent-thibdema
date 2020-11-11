@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import {SelectedItem} from '../components';
 import {gql, useMutation} from '@apollo/client';
 
-import {ContentLoader} from '../components';
+import {ContentLoader, ErrorAlert, SelectedItem} from '../components';
 
 const ADD_PRODUCT = gql`
   mutation addProduct($title: String!, $description: String!, $price: Float, $images: [ImageInput], $created_At: Date, $color: [String]!, $sizes: [SizeQuantityInputs]!, $audience: Audience, $type: Producttype) {
@@ -49,9 +48,7 @@ const AdminAddProduct = () => {
 
   const AddImage = async () => {
     if(!!IMGURL && !!IMGALT) {
-      let newarr = images;
-      await newarr.push({url: IMGURL, alt: IMGALT});
-      await setImages(newarr);
+      await setImages([...images, {url: IMGURL, alt: IMGALT}]);
       await setIMGURL('');
       await setIMGALT('');
     }
@@ -80,6 +77,8 @@ const AdminAddProduct = () => {
 
   return(
     <div className="adminaddproduct container d-flex justify-content-center">
+      {!!data && <SuccessAlert message="Product added succesfully." />}
+      {!!errors && <ErrorAlert message="Something went wrong." />}
       <form className="col-md-8 col-12" onSubmit={(e) => {
         e.preventDefault();
         addProduct({
