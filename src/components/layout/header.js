@@ -37,14 +37,14 @@ const Header = () => {
           </nav>
           <Link to={Routes.Home} className="logo col-md-4">Clothing Store</Link>
           <div className="header__icons text-right col-md-4 col-12">
-            <NavLink to={Routes.Basket} activeClassName="selected">Winkelmand</NavLink>
+            <NavLink to={Routes.Basket} activeClassName="selected">Basket</NavLink>
             {(JSON.parse(localStorage.getItem('admin')) === true) &&
               <NavLink to={Routes.AdminPanel} activeClassName="selected">Admin</NavLink> 
             }
             {(!localStorage.token) ?
               <Fragment>
-                <NavLink to={Routes.Login} activeClassName="selected">login</NavLink>
-                <NavLink to={Routes.Register} activeClassName="selected">register</NavLink>
+                <NavLink to={Routes.Login} activeClassName="selected">Login</NavLink>
+                <NavLink to={Routes.Register} activeClassName="selected">Register</NavLink>
               </Fragment>
               :
               <Link to={Routes.Logout}>Logout</Link>
@@ -74,7 +74,7 @@ const Header = () => {
           <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Home} activeClassName="selected">Home</NavLink>
           <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.AllAudience} activeClassName="selected">Audience</NavLink>
           <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Allcategories} activeClassName="selected">Categories</NavLink>
-          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Basket} activeClassName="selected">Winkelmand</NavLink>
+          <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Basket} activeClassName="selected">Basket</NavLink>
           <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Login} activeClassName="selected">Login</NavLink>
           <NavLink onClick={() => setMobileNav(!mobileNav)} to={Routes.Register} activeClassName="selected">Register</NavLink>
         </div>
