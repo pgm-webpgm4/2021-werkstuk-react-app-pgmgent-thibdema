@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import {gql, useMutation} from '@apollo/client';
 
-import {ContentLoader, ErrorAlert, SelectedItem} from '../components';
+import {ContentLoader, ErrorAlert, SuccessAlert, SelectedItem} from '../components';
 
 const ADD_PRODUCT = gql`
   mutation addProduct($title: String!, $description: String!, $price: Float, $images: [ImageInput], $created_At: Date, $color: [String]!, $sizes: [SizeQuantityInputs]!, $audience: Audience, $type: Producttype) {
